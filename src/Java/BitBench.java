@@ -1,0 +1,249 @@
+import java.util.Scanner;
+
+public class BitBench {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int ch;
+
+        while (true) {
+            System.out.println("\n===== DIGITAL CIRCUIT PROGRAM =====");
+            System.out.println("1. Half Adder");
+            System.out.println("2. Full Adder");
+            System.out.println("3. Half Subtractor");
+            System.out.println("4. Full Subtractor");
+            System.out.println("5. SR Flip-Flop");
+            System.out.println("6. JK Flip-Flop");
+            System.out.println("7. T Flip-Flop");
+            System.out.println("8. D Flip-Flop");
+            System.out.println("9. Exit");
+            System.out.print("Enter your choice: ");
+            ch = sc.nextInt();
+            sc.nextLine();
+
+            switch (ch) {
+
+                case 1:
+                    String A = "",B = "";
+
+                    System.out.print("Enter A: ");
+                    A = sc.nextLine();
+                    System.out.print("Enter B: ");
+                    B = sc.nextLine();
+                    if (A.length() != B.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nA B | SUM CARRY");
+                    System.out.println("----------------");
+
+                    for (int i = 0; i < A.length(); i++) {
+                        int a = A.charAt(i) - '0';
+                        int b = B.charAt(i) - '0';
+                        int sum = a ^ b;
+                        int carry = a & b;
+                        System.out.println(a + " " + b + " |  " + sum + "   " + carry);
+                    }
+
+                    break;
+
+                case 2:
+                    String A1 = "", B1 = "", C1 = "";
+
+                    System.out.print("Enter A: ");
+                    A1 = sc.nextLine();
+                    System.out.print("Enter B: ");
+                    B1 = sc.nextLine();
+                    System.out.print("Enter Cin: ");
+                    C1 = sc.nextLine();
+                    if (A1.length() != B1.length() || B1.length() != C1.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nA B Cin | SUM CARRY");
+                    System.out.println("-------------------");
+
+                    for (int i = 0; i < A1.length(); i++) {
+                        int a = A1.charAt(i) - '0';
+                        int b = B1.charAt(i) - '0';
+                        int cin = C1.charAt(i) - '0';
+                        int sum = a ^ b ^ cin;
+                        int carry = (a & b) | (cin & (a ^ b));
+                        System.out.println(a + " " + b + "  " + cin + "  |  " + sum + "   " + carry);
+                    }
+
+                    break;
+
+                case 3:
+                    String A2 = "", B2 = "";
+
+                    System.out.print("Enter A: ");
+                    A2 = sc.nextLine();
+                    System.out.print("Enter B: ");
+                    B2 = sc.nextLine();
+                    if (A2.length() != B2.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nA B | DIFF BORROW");
+                    System.out.println("-----------------");
+
+                    for (int i = 0; i < A2.length(); i++) {
+                        int a = A2.charAt(i) - '0';
+                        int b = B2.charAt(i) - '0';
+                        int diff = a ^ b;
+                        int borrow = (~a) & b;
+                        borrow = borrow & 1;
+                        System.out.println(a + " " + b + " |  " + diff + "   " + borrow);
+                    }
+
+                    break;
+
+                case 4:
+                    String A3 = "", B3 = "", Bin = "";
+
+                    System.out.print("Enter A: ");
+                    A3 = sc.nextLine();
+                    System.out.print("Enter B: ");
+                    B3 = sc.nextLine();
+                    System.out.print("Enter Bin: ");
+                    Bin = sc.nextLine();
+                    if (A3.length() != B3.length() || B3.length() != Bin.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nA B Bin | DIFF BORROW");
+                    System.out.println("---------------------");
+
+                    for (int i = 0; i < A3.length(); i++) {
+                        int a = A3.charAt(i) - '0';
+                        int b = B3.charAt(i) - '0';
+                        int bin = Bin.charAt(i) - '0';
+                        int diff = a ^ b ^ bin;
+                        int borrow = ((~a) & b) | (bin & (~(a ^ b)));
+                        borrow = borrow & 1;
+                        System.out.println(a + " " + b + "  " + bin + "  |  " + diff + "   " + borrow);
+                    }
+
+                    break;
+
+                case 5:
+                    String S = "", R = "";
+
+                    System.out.print("Enter S: ");
+                    S = sc.nextLine();
+                    System.out.print("Enter R: ");
+                    R = sc.nextLine();
+                    if (S.length() != R.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nS R | Q(n) | Q(n+1)");
+                    System.out.println("-------------------");
+
+                    for (int i = 0; i < S.length(); i++) {
+                        int s = S.charAt(i) - '0';
+                        int r = R.charAt(i) - '0';
+                        for (int q = 0; q <= 1; q++) {
+                            int next;
+                            if (s == 0 && r == 0)
+                                next = q;
+                            else if (s == 0 && r == 1)
+                                next = 0;
+                            else if (s == 1 && r == 0)
+                                next = 1;
+                            else
+                                continue;
+                            System.out.println(s + " " + r + " |  " + q + "   |   " + next);
+                        }
+                    }
+
+                    break;
+
+                case 6:
+                    String J = "", K = "";
+
+                    System.out.print("Enter K: ");
+                    K = sc.nextLine();
+                    if (J.length() != K.length()) {
+                        System.out.println("Inputs must have same length");
+                        break;
+                    }
+
+                    System.out.println("\nJ K | Q(n) | Q(n+1)");
+                    System.out.println("-------------------");
+
+                    for (int i = 0; i < J.length(); i++) {
+                        int j = J.charAt(i) - '0';
+                        int k = K.charAt(i) - '0';
+
+                        for (int q = 0; q <= 1; q++) {
+                            int next;
+                            if (j == 0 && k == 0)
+                                next = q;
+                            else if (j == 0 && k == 1)
+                                next = 0;
+
+                            else if (j == 1 && k == 0)
+                                next = 1;
+                            else
+                                next = q ^ 1;
+                            System.out.println(j + " " + k + " |  " + q + "   |   " + next);
+                        }
+                    }
+
+                    break;
+
+                case 7:
+                    String T = "";
+
+                    System.out.print("Enter T: ");
+                    T = sc.nextLine();
+                    System.out.println("\nT | Q(n) | Q(n+1)");
+                    System.out.println("------------------");
+                    for (int i = 0; i < T.length(); i++) {
+                        int t = T.charAt(i) - '0';
+                        for (int q = 0; q <= 1; q++) {
+                            int next;
+                            if (t == 0)
+                                next = q;
+                            else
+                                next = q ^ 1;
+                            System.out.println(t + " |  " + q + "   |   " + next);
+                        }
+                    }
+
+                    break;
+
+                case 8:
+                    String D = "";
+
+                    System.out.print("Enter D: ");
+                    D = sc.nextLine();
+                    System.out.println("\nD | Q(n) | Q(n+1)");
+                    System.out.println("------------------");
+                    for (int i = 0; i < D.length(); i++) {
+                        int d = D.charAt(i) - '0';
+                        for (int q = 0; q <= 1; q++) {
+                            int next = d;
+                            System.out.println(d + " |  " + q + "   |   " + next);
+                        }
+                    }
+                    break;
+
+                case 9:
+                    System.out.println("Program ended");
+                    sc.close();
+                    return;
+                default:
+                    System.out.println("Wrong choice");
+            }
+        }
+    }
+}
