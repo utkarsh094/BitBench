@@ -1,6 +1,6 @@
-# DigitalCircuit
+# BitBench
 
-digital logic is something every CS and ENTC student encounters, but running through truth tables by hand is slow and error-prone. DigitalCircuit is a terminal-based Java program that simulates the core building blocks of digital electronics — adders, subtractors, and flip-flops — using raw bit manipulation, no libraries, no overhead.
+digital logic is something every CS student encounters, but running through truth tables by hand is slow and error-prone. BitBench is a terminal-based Java program that simulates the core building blocks of digital electronics — adders, subtractors, and flip-flops — using raw bit manipulation, no libraries, no overhead.
 
 you type in binary inputs, it gives you the exact outputs a real circuit would produce.
 
@@ -54,15 +54,15 @@ if not, download from [https://adoptium.net](https://adoptium.net) — it's a on
 
 **option 1 — download the pre-built JAR (easiest)**
 
-grab `DigitalCircuit.jar` from this repo, then:
+grab `BitBench.jar` from the `bin/` folder in this repo, then:
 ```bash
-java -jar DigitalCircuit.jar
+java -jar bin/BitBench.jar
 ```
 
 **option 2 — build from source**
 ```bash
-javac src/DigitalCircuit.java
-java -cp src DigitalCircuit
+javac src/java/BitBench.java
+java -cp src/java BitBench
 ```
 
 ---
@@ -105,10 +105,13 @@ inputs must be the same length. the program tells you if they aren't.
 ## repo structure
 
 ```
-DigitalCircuit/
+BitBench/
 ├── src/
-│   └── DigitalCircuit.java
-├── DigitalCircuit.jar
+│   └── java/
+│       └── BitBench.java
+├── bin/
+│   └── BitBench.jar
+├── .gitignore
 ├── LICENSE
 └── README.md
 ```
