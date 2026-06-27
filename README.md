@@ -1,6 +1,6 @@
 # BitBench
 
-digital logic is something every CS student encounters, but running through truth tables by hand is slow and error-prone. BitBench is a terminal-based Java program that simulates the core building blocks of digital electronics — adders, subtractors, and flip-flops — using raw bit manipulation, no libraries, no overhead.
+digital logic is something every CS student encounters, but running through truth tables by hand is slow and error-prone. BitBench is a terminal-based Java program that simulates the core building blocks of digital electronics adders, subtractors, and flip-flops using raw bit manipulation, no libraries, no overhead.
 
 you type in binary inputs, it gives you the exact outputs a real circuit would produce.
 
