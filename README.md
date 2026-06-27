@@ -36,35 +36,53 @@ flip-flops iterate over both possible current states (Q=0 and Q=1) for each inpu
 
 ---
 
+## quickstart
+ 
+no cloning needed. just download and run:
+ 
+1. download `BitBench.jar` from [Releases](https://github.com/yourusername/BitBench/releases)
+2. open terminal in your download folder
+3. run:
+```bash
+java -jar BitBench.jar
+```
+ 
+
 ## requirements
-
+ 
+**Java**
 - Java Runtime Environment (JRE) 8 or above
-- that's it
-
-check if you already have it:
-```bash
-java -version
-```
-
-if not, download from [https://adoptium.net](https://adoptium.net) — it's a one-time install.
-
+- check if you have it: `java -version`
+- if not, download from [https://adoptium.net](https://adoptium.net) — one-time install
 ---
-
+ 
 ## run it
-
-**option 1 — download the pre-built JAR (easiest)**
-
-grab `BitBench.jar` from the `bin/` folder in this repo, then:
+ 
+### Java
+ 
+**option 1 — releases (easiest, no cloning)**
+ 
+download `BitBench.jar` from [Releases](https://github.com/yourusername/BitBench/releases), then:
 ```bash
-java -jar bin/BitBench.jar
+java -jar BitBench.jar
 ```
-
+ 
 **option 2 — build from source**
 ```bash
+git clone https://github.com/yourusername/BitBench.git
+cd BitBench
 javac src/java/BitBench.java
 java -cp src/java BitBench
 ```
-
+ 
+---
+ 
+on Windows:
+```bash
+gcc src/c/BitBench.c -o BitBench.exe
+BitBench.exe
+```
+ 
 ---
 
 ## usage
