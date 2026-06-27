@@ -40,7 +40,7 @@ flip-flops iterate over both possible current states (Q=0 and Q=1) for each inpu
  
 no cloning needed. just download and run:
  
-1. download `BitBench.jar v1.0` from [Releases](https://github.com/yourusername/BitBench/releases)
+1. download `BitBench.jar v1.0` from [Releases](https://github.com/utkarsh094/BitBench/releases)
 2. open terminal in your download folder
 3. run:
 ```bash
@@ -62,14 +62,14 @@ java -jar BitBench.jar
  
 **option 1 — releases (easiest, no cloning)**
  
-download `BitBench.jar` from [Releases](https://github.com/yourusername/BitBench/releases), then:
+download `BitBench.jar v1.0` from [Releases](https://github.com/utkarsh094/BitBench/releases), then:
 ```bash
 java -jar BitBench.jar
 ```
  
 **option 2 — build from source**
 ```bash
-git clone https://github.com/yourusername/BitBench.git
+git clone https://github.com/utkarsh094/BitBench.git
 cd BitBench
 javac src/java/BitBench.java
 java -cp src/java BitBench
@@ -138,7 +138,7 @@ BitBench/
 
 ## limitations
 
-- inputs are validated for equal length but not for non-binary characters — entering anything other than `0` and `1` will give wrong output silently
+- inputs are validated for equal length but not for non-binary characters entering anything other than `0` and `1` will give wrong output silently
 - SR Flip-Flop skips the S=1, R=1 state (invalid/undefined), as is standard
 - no graphical output — this is purely terminal
 
