@@ -40,7 +40,7 @@ flip-flops iterate over both possible current states (Q=0 and Q=1) for each inpu
  
 no cloning needed. just download and run:
  
-1. download `BitBench.jar` from [Releases](https://github.com/yourusername/BitBench/releases)
+1. download `BitBench.jar v1.0` from [Releases](https://github.com/yourusername/BitBench/releases)
 2. open terminal in your download folder
 3. run:
 ```bash
